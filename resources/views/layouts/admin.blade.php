@@ -76,6 +76,10 @@
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}" href="{{route('dashboard')}}">
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Dashboard
                                 </a>
+
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin/project' ? 'bg-secondary' : '' }}" href="{{route('project.index')}}">
+                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Progetti
+                                </a>
                             </li>
 
                         </ul>

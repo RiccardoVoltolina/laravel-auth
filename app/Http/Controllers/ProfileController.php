@@ -8,9 +8,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\Project;
+
+
 
 class ProfileController extends Controller
 {
+
+    public function index()
+    {
+        $projects = Project::all();
+        return view('admin.dashboard', compact('projects'));
+    }
     /**
      * Display the user's profile form.
      */

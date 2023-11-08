@@ -51,6 +51,11 @@
 
         </tbody>
     </table>
+
+    <form class="mx-2" action="{{route("project.create")}}">
+                           
+        <button class="bg-success mb-3 border-0" type="submit">Aggiungi un nuovo progetto</button>
+    </form>
 </div>
 
 @endsection

@@ -72,6 +72,6 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
-    }
+        $project->delete();
+        return redirect()->route('project.index')->with('messaggio', 'hai cancellato il il fumetto con successo!');    }
 }

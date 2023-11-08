@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Create</h1>
+<h1>EDIT</h1>
 
 <div class="col-6 mx-auto">
     <form action="{{ route('project.update', $project) }}" method="post">

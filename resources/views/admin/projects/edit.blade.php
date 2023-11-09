@@ -13,13 +13,13 @@
         </ul>
     </div>
     @endif
-    <form action="{{ route('project.update', $project) }}" method="post">
+    <form action="{{ route('project.update', $project) }}" method="post" enctype="multipart/form-data">
 
         @csrf
 
         @method('PUT')
 
-        <h1 class="my-3">MODIFICA UN NUOVO PROGETTO</h1>
+        <h1 class="my-3">MODIFICA UN PROGETTO</h1>
 
 
 
@@ -39,7 +39,7 @@
 
         <div class="mb-3">
             <label for="thumb" class="form-label">Scegli una immagine</label>
-            <input type="file" class="form-control" name="thumb" id="thumb" placeholder="" aria-describedby="thumb_helper" value="{{ old('thumb', $project->thumb) }}">
+            <input type="file" class="form-control" name="thumb" id="thumb" placeholder="Scegli una immagine" aria-describedby="thumb_helper" value="{{ old('thumb', $project->thumb) }}">
             <div id="thumb_helper" class="form-text">Inserisci una immagine</div>
         </div>
 

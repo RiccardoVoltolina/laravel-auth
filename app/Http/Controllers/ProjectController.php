@@ -46,16 +46,14 @@ class ProjectController extends Controller
 
         $project = new Project();
 
+     
 
         if ($request->has('thumb')) {
             $file_path =  Storage::put('projects_images', $request->thumb);
-            
             $project ->thumb = $file_path;
         }
 
-
-
-
+     
         $project->description = $request->description;
         $project->title = $request->title;
         $project->authors = $request->authors;

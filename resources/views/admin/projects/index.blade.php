@@ -13,6 +13,11 @@
 @endif
 
 <div class="table-responsive mt-5">
+
+    {{-- impaginazione eseguita tramite la funzione index situata nel ProjectController --}}
+    
+    {{$projects->links('pagination::bootstrap-5')}}
+
     <table class="table table-primary">
         <thead>
             <tr>

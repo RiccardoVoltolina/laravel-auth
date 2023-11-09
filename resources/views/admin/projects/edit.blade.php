@@ -2,7 +2,6 @@
 
 @section('content')
 
-<h1>EDIT</h1>
 
 <div class="col-6 mx-auto">
     @if ($errors->any())
@@ -19,6 +18,9 @@
         @csrf
 
         @method('PUT')
+
+        <h1 class="my-3">MODIFICA UN NUOVO PROGETTO</h1>
+
 
 
         <div class="mb-3">

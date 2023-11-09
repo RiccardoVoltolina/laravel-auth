@@ -2,7 +2,8 @@
 
 @section('content')
 
-<h1>SHOW</h1>
+<h1 class="text-center my-3">PROGETTO</h1>
+
 
 <div class="table-responsive mt-5">
     <table class="table table-primary">

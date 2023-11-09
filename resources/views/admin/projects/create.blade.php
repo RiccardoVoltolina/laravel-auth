@@ -2,7 +2,6 @@
 
 @section('content')
 
-<h1>Create</h1>
 
 <div class="col-6 mx-auto">
     {{-- se il validation messo nella funzione store riscontra degli errori, allora stampo in pagina un messaggio di errore --}}
@@ -19,11 +18,13 @@
     <form action="{{ route('project.store') }}" method="post" enctype="multipart/form-data">
 
         @csrf
+        <h1 class="my-3">CREA UN NUOVO PROGETTO</h1>
+
 
         <div class="mb-3">
             <label for="title" class="form-label">Titolo</label>
             {{-- utilizziamo la funzione old per ridare all'utente i valori inseriti prima,in caso di errore --}}
-            <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId" placeholder="scrivi un titolo per il tuo progetto" value="{{ old('title') }}">
+            <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId" placeholder="Scrivi un titolo per il tuo progetto" value="{{ old('title') }}">
             <small id="titleHelper" class="form-text text-muted">Scrivi un titolo per il tuo progetto</small>
         </div>
 
@@ -36,7 +37,7 @@
 
         <div class="mb-3">
             <label for="thumb" class="form-label">Scegli una immagine</label>
-            <input type="file" class="form-control" name="thumb" id="thumb" placeholder="" aria-describedby="thumb_helper" value="{{ old('thumb') }}">
+            <input type="file" class="form-control" name="thumb" id="thumb" placeholder="Scegli una immagine per il tuo progetto" aria-describedby="thumb_helper" value="{{ old('thumb') }}">
             <div id="thumb_helper" class="form-text">Inserisci una immagine</div>
         </div>
 

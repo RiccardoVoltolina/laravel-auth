@@ -29,39 +29,40 @@
                 <th scope="col">TITOLO</th>
                 <th scope="col">DESCRIZIONE</th>
                 <th scope="col">AUTORI</th>
-                <th></th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
             @foreach ($projects as $project)
-
-            <img src="{{asset('storage/' . $project->projects_images)}}" alt="">
            
                 <tr>
-                    <td><img class="w-25" src="{{ Str::startsWith($project->thumb, 'placeholders/') ? asset('storage/' .  $project->thumb) :  $project->thumb }}" alt=""></td>
+
+                    <td>
+                        <img width="100" src="{{ asset('storage/' . $project->thumb) }}">
+                    </td>
+                    
                     <td scope="row">{{$project->title}}</td>
                     <td>{{$project->description}}</td>
                     <td>{{$project->authors}}</td>
-                    <td class="d-flex">
+                    <td>
+                        <div class="d-flex">
 
-
-                     
-
-                        <form action="{{route("project.show", [$project->id])}}">
-                           
-                            <button class="bg-success mb-3 border-0" type="submit">Dettagli</button>
-                        </form>
-
-                        <form class="mx-2" action="{{route("project.edit", [$project->id])}}">
-                           
-                            <button class="bg-success mb-3 border-0" type="submit">Aggiorna</button>
-                        </form>
-
-                        <form action="{{route("project.destroy", [$project->id])}}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button class="bg-danger mb-3 border-0" type="submit">Cancella</button>
-                        </form>
+                            <form action="{{route("project.show", [$project->id])}}">
+                               
+                                <button class="bg-success mb-3 border-0" type="submit">Dettagli</button>
+                            </form>
+    
+                            <form class="mx-2" action="{{route("project.edit", [$project->id])}}">
+                               
+                                <button class="bg-success mb-3 border-0" type="submit">Aggiorna</button>
+                            </form>
+    
+                            <form action="{{route("project.destroy", [$project->id])}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="bg-danger mb-3 border-0" type="submit">Cancella</button>
+                            </form>
+                        </div>
                     </td>
                 </tr>
             @endforeach

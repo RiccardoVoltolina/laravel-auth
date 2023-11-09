@@ -16,6 +16,8 @@
 
     <h1>Dashboard</h1>
 
+
+
     {{-- impaginazione eseguita tramite la funzione index situata nel ProjectController --}}
 
     {{$projects->links('pagination::bootstrap-5')}}
@@ -23,6 +25,7 @@
     <table class="table table-primary">
         <thead>
             <tr>
+                <th scope="col">IMMAGINI</th>
                 <th scope="col">TITOLO</th>
                 <th scope="col">DESCRIZIONE</th>
                 <th scope="col">AUTORI</th>
@@ -31,11 +34,18 @@
         </thead>
         <tbody>
             @foreach ($projects as $project)
+
+            <img src="{{asset('storage/' . $project->projects_images)}}" alt="">
+           
                 <tr>
+                    <td><img class="w-25" src="{{ Str::startsWith($project->thumb, 'placeholders/') ? asset('storage/' .  $project->thumb) :  $project->thumb }}" alt=""></td>
                     <td scope="row">{{$project->title}}</td>
                     <td>{{$project->description}}</td>
                     <td>{{$project->authors}}</td>
                     <td class="d-flex">
+
+
+                     
 
                         <form action="{{route("project.show", [$project->id])}}">
                            

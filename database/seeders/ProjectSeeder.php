@@ -19,6 +19,8 @@ class ProjectSeeder extends Seeder
 
             $project = new Project();
 
+            $project->thumb = 'placeholders/' . $faker->image('public/storage/placeholders', category: 'Project', fullPath: false);
+
             $project->title = $faker->realText(10);
 
             $project->description = $faker->realText(50);

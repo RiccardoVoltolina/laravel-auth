@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -40,11 +41,21 @@ class ProjectController extends Controller
             'title' => 'required|max:50|min:2',
             'description' => 'nullable|max:1000|min:2',
             'authors' => 'nullable|max:50|min:2',
+            // 'thumb' => 'nullable|mimes:jpg,bmp,png|max:300',
         ]);
 
-
-
         $project = new Project();
+
+
+        if ($request->has('thumb')) {
+            $file_path =  Storage::put('projects_images', $request->thumb);
+            
+            $project ->thumb = $file_path;
+        }
+
+
+
+
         $project->description = $request->description;
         $project->title = $request->title;
         $project->authors = $request->authors;
@@ -81,7 +92,7 @@ class ProjectController extends Controller
             'description' => 'nullable|max:1000|min:2',
             'authors' => 'nullable|max:50|min:2',
         ]);
-        
+
         $data = $request->all();
         $project->update($data);
         return redirect()->route('project.show', $project->id);

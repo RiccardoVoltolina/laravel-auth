@@ -35,6 +35,12 @@
         </div>
 
         <div class="mb-3">
+            <label for="thumb" class="form-label">Choose file</label>
+            <input type="file" class="form-control" name="thumb" id="thumb" placeholder="" aria-describedby="thumb_helper" value="{{ old('thumb') }}">
+            <div id="thumb_helper" class="form-text">Inserisci una immagine</div>
+        </div>
+
+        <div class="mb-3">
             <label for="authors" class="form-label">Autore/i</label>
             {{-- utilizziamo la funzione old per ridare all'utente i valori inseriti prima,in caso di errore --}}
             <input type="text" class="form-control" name="authors" id="authors" aria-describedby="help" placeholder="Scrivi gli autori del tuo progetto" value="{{ old('authors') }}">

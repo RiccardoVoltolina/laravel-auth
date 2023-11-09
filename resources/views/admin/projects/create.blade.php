@@ -4,7 +4,20 @@
 
 <h1>Create</h1>
 
+ 
+
 <div class="col-6 mx-auto">
+    {{-- se il validation messo nella funzione store riscontra degli errori, allora stampo in pagina un messaggio di errore --}}
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{$error}}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+    
     <form action="{{ route('project.store') }}" method="post">
 
         @csrf

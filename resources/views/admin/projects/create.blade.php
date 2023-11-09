@@ -35,7 +35,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="thumb" class="form-label">Choose file</label>
+            <label for="thumb" class="form-label">Scegli una immagine</label>
             <input type="file" class="form-control" name="thumb" id="thumb" placeholder="" aria-describedby="thumb_helper" value="{{ old('thumb') }}">
             <div id="thumb_helper" class="form-text">Inserisci una immagine</div>
         </div>

@@ -48,32 +48,35 @@
                         <div class="d-flex">
 
                             <form action="{{route("project.show", [$project->id])}}">
+
+                                <button type="submit" class="btn btn-primary">Dettagli</button>
                                
-                                <button class="bg-success mb-3 border-0" type="submit">Dettagli</button>
                             </form>
     
                             <form class="mx-2" action="{{route("project.edit", [$project->id])}}">
+
+                                <button type="submit" class="btn btn-warning">Aggiorna</button>
                                
-                                <button class="bg-success mb-3 border-0" type="submit">Aggiorna</button>
                             </form>
     
                             <form action="{{route("project.destroy", [$project->id])}}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button class="bg-danger mb-3 border-0" type="submit">Cancella</button>
+                                <button type="submit" class="btn btn-danger">Cancella</button>
                             </form>
                         </div>
                     </td>
                 </tr>
             @endforeach
 
+            <form class="mx-2" action="{{route("project.create")}}">
+        
+                <button type="submit" class="btn btn-success mb-3">Aggiungi un nuovo progetto</button>
+                                   
+            </form>
         </tbody>
     </table>
 
-    <form class="mx-2" action="{{route("project.create")}}">
-                           
-        <button class="bg-success mb-3 border-0" type="submit">Aggiungi un nuovo progetto</button>
-    </form>
 </div>
 
 @endsection

@@ -15,6 +15,7 @@ class ProjectController extends Controller
     public function index()
     {
         // passo tutti i risultati in pagina in ordine decrescente
+
         $projects = Project::orderByDesc('id')->paginate(10);
 
         return view('admin.projects.index', compact('projects'));
@@ -74,6 +75,13 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
+
+        $validated = $request->validate([
+            'title' => 'required|max:50|min:2',
+            'description' => 'nullable|max:1000|min:2',
+            'authors' => 'nullable|max:50|min:2',
+        ]);
+        
         $data = $request->all();
         $project->update($data);
         return redirect()->route('project.show', $project->id);

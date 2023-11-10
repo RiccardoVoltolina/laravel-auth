@@ -65,6 +65,9 @@
 
         <button type="submit" class="btn btn-primary">Aggiungi progetto</button>
     </form>
+    <a class="nav-link my-2 text-end" href="{{route('project.index')}}">
+        <button type="button" class="btn btn-warning">TORNA AI PROGETTI</button>
+    </a>
 </div>
 
 

@@ -38,14 +38,14 @@
         <div class="mb-3">
             <label for="githublink" class="form-label">Link Github</label>
             {{-- utilizziamo la funzione old per ridare all'utente i valori inseriti prima,in caso di errore --}}
-            <input type="text" class="form-control" name="githublink" id="githublink" aria-describedby="helpId" placeholder="Scrivi una descrizione per il tuo progetto" value="{{ old('githublink') }}">
+            <input type="url" class="form-control" name="githublink" id="githublink" aria-describedby="helpId" placeholder="Scrivi una descrizione per il tuo progetto" value="{{ old('githublink') }}">
             <small id="githublinkHelper" class="form-text text-muted">Scrivi il link del tuo progetto github</small>
         </div>
 
         <div class="mb-3">
             <label for="projectlink" class="form-label">Link Progetto</label>
             {{-- utilizziamo la funzione old per ridare all'utente i valori inseriti prima,in caso di errore --}}
-            <input type="text" class="form-control" name="projectlink" id="projectlink" aria-describedby="helpId" placeholder="Scrivi una descrizione per il tuo progetto" value="{{ old('projectlink') }}">
+            <input type="url" class="form-control" name="projectlink" id="projectlink" aria-describedby="helpId" placeholder="Scrivi una descrizione per il tuo progetto" value="{{ old('projectlink') }}">
             <small id="projectlinkHelper" class="form-text text-muted">Scrivi il link del tuo progetto github</small>
         </div>
 

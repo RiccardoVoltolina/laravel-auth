@@ -53,7 +53,8 @@ class ProjectController extends Controller
             $project ->thumb = $file_path;
         }
 
-     
+        $project->githublink = $request->githublink;
+        $project->projectlink = $request->projectlink;
         $project->description = $request->description;
         $project->title = $request->title;
         $project->authors = $request->authors;

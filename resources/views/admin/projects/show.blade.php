@@ -13,6 +13,9 @@
                 <th scope="col">TITOLO</th>
                 <th scope="col">DESCRIZIONE</th>
                 <th scope="col">AUTORI</th>
+                <th scope="col">LINK GITHUB</th>
+                <th scope="col">LINK AL PROGETTO</th>
+
             </tr>
         </thead>
         <tbody>
@@ -23,6 +26,8 @@
                     <td scope="row">{{$project->title}}</td>
                     <td>{{$project->description}}</td>
                     <td>{{$project->authors}}</td>
+                    <td> <a href="{{$project->githublink}}">{{$project->githublink}}</a></td>
+                    <td><a href="{{$project->projectlink}}">{{$project->projectlink}}</a></td>
                 </tr>
 
         </tbody>

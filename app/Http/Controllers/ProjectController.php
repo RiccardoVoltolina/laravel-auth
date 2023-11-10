@@ -42,6 +42,8 @@ class ProjectController extends Controller
             'description' => 'nullable|max:1000|min:2',
             'authors' => 'nullable|max:50|min:2',
             'thumb' => 'nullable|mimes:jpg,bmp,png|max:300',
+            'githublink' => 'nullable|url:http,https',
+            'projectlink' => 'nullable|url:http,https',
         ]);
 
         $project = new Project();
@@ -91,6 +93,8 @@ class ProjectController extends Controller
             'description' => 'nullable|max:1000|min:2',
             'authors' => 'nullable|max:50|min:2',
             'thumb' => 'nullable|mimes:jpg,bmp,png|max:300',
+            'githublink' => 'nullable|url:http,https',
+            'projectlink' => 'nullable|url:http,https',
         ]);
         
         

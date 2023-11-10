@@ -9,12 +9,12 @@
     <table class="table table-primary">
         <thead>
             <tr>
-                <th scope="col">IMMAGINI</th>
-                <th scope="col">TITOLO</th>
-                <th scope="col">DESCRIZIONE</th>
-                <th scope="col">AUTORI</th>
-                <th scope="col">LINK GITHUB</th>
-                <th scope="col">LINK AL PROGETTO</th>
+                <th class="text-center" scope="col">IMMAGINI</th>
+                <th class="text-center" scope="col">TITOLO</th>
+                <th class="text-center" scope="col">DESCRIZIONE</th>
+                <th class="text-center" scope="col">AUTORI</th>
+                <th class="text-center" scope="col">LINK GITHUB</th>
+                <th class="text-center" scope="col">LINK AL PROGETTO</th>
 
             </tr>
         </thead>
@@ -26,8 +26,8 @@
                     <td scope="row">{{$project->title}}</td>
                     <td>{{$project->description}}</td>
                     <td>{{$project->authors}}</td>
-                    <td> <a href="{{$project->githublink}}">{{$project->githublink}}</a></td>
-                    <td><a href="{{$project->projectlink}}">{{$project->projectlink}}</a></td>
+                    <td class="text-center"><a href="{{$project->githublink}}"><i class="fa-brands fa-github text-black"></i></a></td>
+                    <td class="text-center"><a href="{{$project->projectlink}}"><i class="fa-solid fa-diagram-project text-black"></i></a></td>
                 </tr>
 
         </tbody>

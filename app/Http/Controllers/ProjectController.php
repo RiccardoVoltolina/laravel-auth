@@ -90,6 +90,7 @@ class ProjectController extends Controller
             'title' => 'required|max:50|min:2',
             'description' => 'nullable|max:1000|min:2',
             'authors' => 'nullable|max:50|min:2',
+            'thumb' => 'nullable|mimes:jpg,bmp,png|max:300',
         ]);
         
         

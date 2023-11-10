@@ -29,7 +29,7 @@
                 <th scope="col">TITOLO</th>
                 <th scope="col">DESCRIZIONE</th>
                 <th scope="col">AUTORI</th>
-                <th scope="col"></th>
+                <th class=" text-center" scope="col">COMANDI</th>
             </tr>
         </thead>
         <tbody>

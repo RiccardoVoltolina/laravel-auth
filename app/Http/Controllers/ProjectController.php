@@ -91,8 +91,25 @@ class ProjectController extends Controller
             'description' => 'nullable|max:1000|min:2',
             'authors' => 'nullable|max:50|min:2',
         ]);
-
+        
+        
+        
         $data = $request->all();
+
+        // prendo le richieste hanno una immagine
+        
+        if ($request->has('thumb')) {
+
+            // aggiungo a $file_path l'immagine e la mette nello storage nella cartella projects_images
+
+            $file_path =  Storage::put('projects_images', $request->thumb);
+
+            // prendo il $data, che contiene tutte le richieste, seleziono il thumb e gli dico che è ugiuale a $file_path
+
+            $data["thumb"] = $file_path;
+        }
+
+        // aggiorno i dati del mio progetto
         $project->update($data);
         return redirect()->route('project.show', $project->id);
     }
